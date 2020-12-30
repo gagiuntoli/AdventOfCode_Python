@@ -15,3 +15,10 @@ for i in range(0, len(n)):
 	if n[i] == n[(i+len(n)//2) % len(n)]:
 		s += int(n[i])
 print (s)
+
+# Sol input1.dat
+#
+# 1216
+# 1072
+#
+# Time: 0.014 s
