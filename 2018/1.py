@@ -22,3 +22,10 @@ while not f_flag:
 			f_flag = True
 
 print (f_rep)
+
+# Sol input1.dat
+#
+# 508
+# 549
+#
+# Time: 0.060 s
