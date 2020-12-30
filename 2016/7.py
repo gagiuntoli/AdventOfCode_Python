@@ -9,12 +9,6 @@ def abba(w):
 			return True
 	return False
 
-def aba(w):
-	for i in range(0, len(w) - 2):
-		if w[i] == w[i+2] and w[i] != w[i+1]:
-			return True
-	return False
-
 def get_bab(w):
 	bab = []
 	for i in range(0, len(w) - 2):
