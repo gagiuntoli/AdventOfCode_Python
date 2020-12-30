@@ -16,3 +16,10 @@ for p, i in enumerate(L[0]):
 
 print (floor)
 print (basement + 1)
+
+# Sol input1.dat
+#
+# 232
+# 1783
+#
+# Time: 0.015 s

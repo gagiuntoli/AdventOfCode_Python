@@ -48,3 +48,10 @@ for i, m in enumerate(mov):
 		hauses2.add((x2,y2))
 
 print(len(hauses1.union(hauses2)))
+
+# Sol input3.dat
+#
+# 2565
+# 2639
+#
+# Time: 0.016 s

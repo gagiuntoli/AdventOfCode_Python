@@ -51,3 +51,10 @@ for w in L:
 
 print (count1)
 print (count2)
+
+# Sol input5.dat
+#
+# 255
+# 55
+#
+# Time: 0.015 s

@@ -57,3 +57,10 @@ while True:
 		break
 	password = increase_password(password)
 print(password)
+
+# Sol input11.dat
+#
+# hxbxxyzz
+# hxcaabcc
+#
+# Time: 1.444 s

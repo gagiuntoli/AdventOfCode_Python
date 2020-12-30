@@ -40,3 +40,10 @@ for l in L:
 
 print(length_1 - length_2)
 print(length_3 - length_1)
+
+# Sol input8.dat
+#
+# 1342
+# 2074
+#
+# Time: 0.029 s

@@ -127,3 +127,10 @@ b_value = memory[key_to_search]
 memory = {'b': b_value} 
 solve_wires(L, key_to_search, True)
 print (memory[key_to_search])
+
+# Sol input7.dat
+#
+# 3176
+# 14710
+#
+# Time: 0.076 s

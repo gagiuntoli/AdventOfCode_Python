@@ -19,3 +19,10 @@ while hashlib.md5((ivalue+str(number)).encode()).hexdigest()[0:6] != '000000':
 	number += 1
 
 print (number)
+
+# Sol input4.dat
+#
+# 117946
+# 3938038
+#
+# Time: 2.803 s

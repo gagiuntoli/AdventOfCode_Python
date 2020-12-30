@@ -38,3 +38,10 @@ for cities_p in permutations(cities):
 
 print (min_dist)
 print (max_dist)
+
+# Sol input9.dat
+#
+# 207
+# 804
+#
+# Time: 0.204 s

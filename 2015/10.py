@@ -27,3 +27,10 @@ num = L[0]
 for i in range(50):
 	num = transform(num)
 print (len(num))
+
+# Sol input10.dat
+#
+# 492982
+# 6989950
+#
+# Time: 7.205 s

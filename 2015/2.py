@@ -8,7 +8,6 @@ for l in L:
 	s = [int(x) for x in l.split('x')]
 	s.sort()
 	
-	print (s, min(s))
 	a1 = s[0]*s[1] 
 	a2 = s[0]*s[2] 
 	a3 = s[2]*s[1]
@@ -18,3 +17,10 @@ for l in L:
 
 print (area)
 print (perimeter)
+
+# Sol input2.dat
+#
+# 1598415
+# 3812909
+#
+# Time: 0.011 s

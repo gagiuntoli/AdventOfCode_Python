@@ -42,3 +42,9 @@ for i in range(size):
 print (count)
 print (bright)
 		
+# Sol input6.dat
+#
+# 543903
+# 14687245
+#
+# Time: 4.278 s
