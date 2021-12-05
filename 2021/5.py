@@ -3,57 +3,19 @@ from collections import defaultdict
 
 L = [l.strip() for l in fileinput.input()]
 
-def is_vertical(line):
-	return True if line[0] == line[2] else False
-
-def is_horizontal(line):
-	return True if line[1] == line[3] else False
-
-def add_points(POINTS, line):
-	if is_vertical(line):
-		if line[1] <= line[3]:
-			for i in range(line[1],line[3]+1):
-				POINTS[(line[0],i)] += 1
-		else:
-			for i in range(line[1],line[3]-1,-1):
-				POINTS[(line[0],i)] += 1
-	elif is_horizontal(line):
-		if line[0] <= line[2]:
-			for i in range(line[0],line[2]+1):
-				POINTS[(i,line[1])] += 1
-		else:
-			for i in range(line[0],line[2]-1,-1):
-				POINTS[(i,line[1])] += 1
-
-def add_points_with_diagonal(POINTS, line):
-	if is_vertical(line):
-		if line[1] <= line[3]:
-			for i in range(line[1],line[3]+1):
-				POINTS[(line[0],i)] += 1
-		else:
-			for i in range(line[1],line[3]-1,-1):
-				POINTS[(line[0],i)] += 1
-	elif is_horizontal(line):
-		if line[0] <= line[2]:
-			for i in range(line[0],line[2]+1):
-				POINTS[(i,line[1])] += 1
-		else:
-			for i in range(line[0],line[2]-1,-1):
-				POINTS[(i,line[1])] += 1
-	else:
-		assert (abs(line[0] - line[2]) == abs(line[1] - line[3]))
-		if line[0] <= line[2] and line[1] <= line[3]:
-			for i in range(line[2] - line[0]+1):
-				POINTS[(line[0]+i,line[1]+i)] += 1
-		elif line[0] <= line[2] and line[1] > line[3]:
-			for i in range(line[2] - line[0]+1):
-				POINTS[(line[0]+i,line[1]-i)] += 1
-		elif line[0] > line[2] and line[1] > line[3]:
-			for i in range(line[0] - line[2]+1):
-				POINTS[(line[0]-i,line[1]-i)] += 1
-		elif line[0] > line[2] and line[1] <= line[3]:
-			for i in range(line[0] - line[2]+1):
-				POINTS[(line[0]-i,line[1]+i)] += 1
+def add_points(POINTS, line, diagonals=False):
+	for x1, y1, x2, y2 in lines:
+		x_range = range(x1, x2 + (1 if x1 <= x2 else -1), 1 if x1 <= x2 else -1)
+		y_range = range(y1, y2 + (1 if y1 <= y2 else -1), 1 if y1 <= y2 else -1)
+		if y1 == y2:
+			for x in x_range:
+				POINTS[(x,y1)] += 1
+		elif x1 == x2:
+			for y in y_range:
+				POINTS[(x1,y)] += 1
+		elif diagonals:
+			for x,y in zip(x_range, y_range):
+				POINTS[(x,y)] += 1
 
 lines = []
 for line in L:
@@ -63,26 +25,12 @@ for line in L:
 	lines.append(line_aux)
 
 POINTS = defaultdict(int)
-
-for line in lines:
-	add_points(POINTS,line)
-
-count = 0
-for point in POINTS.keys():
-	if POINTS[point] > 1:
-		count += 1
-print(count)
+add_points(POINTS,lines)
+print(sum(value > 1 for value in POINTS.values()))
 
 POINTS = defaultdict(int)
-for line in lines:
-	add_points_with_diagonal(POINTS,line)
-
-count = 0
-for point in POINTS.keys():
-	if POINTS[point] > 1:
-		count += 1
-
-print(count)
+add_points(POINTS,lines, diagonals=True)
+print(sum(value > 1 for value in POINTS.values()))
 		
 	
 # Sol input .dat
