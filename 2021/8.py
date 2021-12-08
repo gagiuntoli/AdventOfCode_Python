@@ -10,16 +10,10 @@ def decode(numbers, D):
 def find_non_repeated(a, b):
 	if len(b) > len(a):
 		a, b = b, a
-	LB = {}
-	for b_l in b:
-		LB[b_l] = True
-
 	res = ""
-	for a_l in a:
-		if a_l not in LB.keys():
-			res += a_l
-
-	return "".join(sorted(res))
+	for c in a:
+		res += c if c not in b else ""
+	return res
 
 def decode_table(numbers):
 	DI = {}
