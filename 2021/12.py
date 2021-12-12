@@ -3,16 +3,10 @@ from collections import defaultdict
 
 L = [l.strip().split("-") for l in fileinput.input()]
 
-G = {}
+G = defaultdict(list)
 for line in L:
-	if line[0] not in G:
-		G[line[0]] = [line[1]]
-	else:
-		G[line[0]].append(line[1])
-	if line[1] not in G:
-		G[line[1]] = [line[0]]
-	else:
-		G[line[1]].append(line[0])
+	G[line[0]].append(line[1])
+	G[line[1]].append(line[0])
 
 def isLower(string):
 	return all(c.islower() for c in string)
