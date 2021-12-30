@@ -29,11 +29,11 @@ def check_intersep(v,box,max_ts):
 			return ymax
 	return None
 
-max_ts = 500
-min_vx = -200
-min_vy = -200
-max_vx = 300
-max_vy = 300
+max_ts = 250
+min_vx = 0
+min_vy = -100
+max_vx = 250
+max_vy = 250
 
 V = {}
 ymax = -100000
@@ -53,4 +53,4 @@ print(len(V.keys()))
 # 4278
 # 1994
 #
-# Time: 50.2 s
+# Time: 8.70 s

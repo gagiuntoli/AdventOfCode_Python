@@ -1,5 +1,4 @@
 import fileinput
-from collections import defaultdict
 
 L = [int(x) for x in list([l.strip() for l in fileinput.input()])]
 
@@ -9,13 +8,11 @@ for i in range(1,len(L)):
 		count += 1
 print(count)
 
-countW = 0
-for i in range(2,len(L)):
-	currW = L[i] + L[i-1] + L[i-2]
-	if i > 2 and currW > prevW:
-		countW += 1
-	prevW = currW
-print(countW)
+count = 0
+for i in range(1,len(L)-2):
+	if L[i+2] > L[i-1]:
+		count += 1
+print(count)
 
 
 # Sol input1.dat
